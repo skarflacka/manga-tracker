@@ -1,0 +1,13 @@
+User Schema (username (PK), password (bcrypt), email, 
+
+Manga Schema (MangaId (PK), name, chapters (FK from chapters schema), desc, genre, DateAir, DateEnd)
+
+Chapter Schema(ChapterId (PK), FromManga(FK), ChapterNumber, ChapterName, timestamp)
+
+Subscription Schema(username (FK), MangaId(FK), (username, MangaId) (PK))
+
+
+
+User -> sub to manga
+
+Fetch latest manga: query Subscription Schema and get all MangaIds -> query Chapter Schema for all MangaIds
